@@ -8,9 +8,11 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TableLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 
@@ -58,5 +60,32 @@ class ActividadesExtintores : AppCompatActivity() {
             }
         )
         queue.add(jsonObjectRequest)
+    }
+    fun clickTablaBorrar(view: View){
+        val url="https://proyectogexapp.000webhostapp.com/extintorbd/borrar.php"
+        val queue=Volley.newRequestQueue(this)
+        var resultadoPost = object : StringRequest(Request.Method.POST,url,
+            Response.Listener { response ->
+                Toast.makeText(this, "Extintor borrado exitosamente.", Toast.LENGTH_LONG).show()
+                cargaLista()
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, "Error al borrar extintor. $error", Toast.LENGTH_LONG).show()
+            }
+        ){
+            override fun getParams(): MutableMap<String, String> {
+                val parametros=HashMap<String,String>()
+                parametros.put("IdExtintor",view.id.toString())
+                return parametros
+            }
+        }
+        queue.add(resultadoPost)
+        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
+    }
+    fun buscarEdit(view:View){
+        var et_id_busque:TextView=findViewById(R.id.IdExtintor)
+        var intent=Intent(this,InformacionExtintor::class.java)
+        intent.putExtra("IdExtintor",et_id_busque.text.toString())
+        startActivity(intent)
     }
 }

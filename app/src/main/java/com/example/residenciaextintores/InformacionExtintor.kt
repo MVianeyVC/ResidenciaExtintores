@@ -57,7 +57,7 @@ class InformacionExtintor : AppCompatActivity() {
         var resultado = object : StringRequest(Request.Method.POST, url,
             Response.Listener { response ->
                 Toast.makeText(this, "Extintor borrado exitosamente.", Toast.LENGTH_LONG).show()
-                              },
+            },
             { error ->
                 Toast.makeText(this, "Error al borrar extintor. $error", Toast.LENGTH_LONG).show()
             }
@@ -77,7 +77,7 @@ class InformacionExtintor : AppCompatActivity() {
         val resultado = object : StringRequest(Request.Method.POST, url,
             Response.Listener {
                 Toast.makeText(this, "Extintor editado exitosamente.", Toast.LENGTH_LONG).show()
-                              },
+            },
             { error ->
                 Toast.makeText(this, "Error al editar extintor. $error", Toast.LENGTH_LONG).show()
             }
