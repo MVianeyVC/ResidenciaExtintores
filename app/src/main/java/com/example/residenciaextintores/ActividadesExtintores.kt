@@ -33,15 +33,13 @@ class ActividadesExtintores : AppCompatActivity() {
         lista_extintores?.removeAllViews()
         var queue= Volley.newRequestQueue(this)
         var url="https://proyectogexapp.000webhostapp.com/extintorbd/registros.php"
-
         var jsonObjectRequest= JsonObjectRequest(Request.Method.GET,url,null,
             { response ->
                 try {
                     var jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length() ){
                         var jsonObject=jsonArray.getJSONObject(i)
-                        val registro=
-                            LayoutInflater.from(this).inflate(R.layout.lista_registros_extintores,null,false)
+                        val registro= LayoutInflater.from(this).inflate(R.layout.lista_registros_extintores,null,false)
                         val IdExtintor=registro.findViewById<View>(R.id.IdExtintor) as TextView
                         val folio=registro.findViewById<View>(R.id.folio) as TextView
                         val Edit=registro.findViewById<View>(R.id.Edit)
@@ -56,6 +54,7 @@ class ActividadesExtintores : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
+
             }
         )
         queue.add(jsonObjectRequest)
