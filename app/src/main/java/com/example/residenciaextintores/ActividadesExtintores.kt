@@ -56,7 +56,6 @@ class ActividadesExtintores : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }, { error ->
-
             }
         )
         queue.add(jsonObjectRequest)

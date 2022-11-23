@@ -1,5 +1,6 @@
 package com.example.residenciaextintores
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -77,6 +78,8 @@ class InformacionExtintor : AppCompatActivity() {
         val resultado = object : StringRequest(Request.Method.POST, url,
             Response.Listener {
                 Toast.makeText(this, "Extintor editado exitosamente.", Toast.LENGTH_LONG).show()
+                    var intent = Intent(this,ActividadesExtintores::class.java)
+                    startActivity(intent)
             },
             { error ->
                 Toast.makeText(this, "Error al editar extintor. $error", Toast.LENGTH_LONG).show()

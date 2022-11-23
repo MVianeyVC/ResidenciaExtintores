@@ -33,13 +33,17 @@ class MainActivity : AppCompatActivity() {
     fun insert(view:View) {
         if (et_id?.getText().toString().isEmpty()) {
             Toast.makeText(this, "Introduce id.", Toast.LENGTH_LONG).show()
-        } else if (et_folio?.getText().toString().isEmpty()) {
+        }
+        else if (et_folio?.getText().toString().isEmpty()) {
             Toast.makeText(this, "Introduce folio del extintor..", Toast.LENGTH_LONG).show()
-        } else if (et_capacidad?.getText().toString().isEmpty()) {
+        }
+        else if (et_capacidad?.getText().toString().isEmpty()) {
             Toast.makeText(this, "Introduce capacidad del extintor.", Toast.LENGTH_LONG).show()
-        } else if (et_tipo?.getText().toString().isEmpty()) {
+        }
+        else if (et_tipo?.getText().toString().isEmpty()) {
             Toast.makeText(this, "Introduce tipo de extintor.", Toast.LENGTH_LONG).show()
-        } else if (et_ubicacion?.getText().toString().isEmpty()) {
+        }
+        else if (et_ubicacion?.getText().toString().isEmpty()) {
             Toast.makeText(this, "Introduce ubicación del extintor.", Toast.LENGTH_LONG).show()
         }
         else if (et_seguro?.getText().toString().isEmpty()) {
@@ -54,9 +58,9 @@ class MainActivity : AppCompatActivity() {
             var resultPOST = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
                     Toast.makeText(this, "Extintor añadido exitosamete.", Toast.LENGTH_LONG).show()
-                }, Response.ErrorListener { error ->
-                    Toast.makeText(this, "Error al añadir el extintor.$error", Toast.LENGTH_LONG)
-                        .show()
+                },
+                Response.ErrorListener { error ->
+                    Toast.makeText(this, "Error al añadir el extintor.$error", Toast.LENGTH_LONG).show()
                 }) {
                 override fun getParams(): MutableMap<String, String>? {
                     val parametro = HashMap<String, String>()

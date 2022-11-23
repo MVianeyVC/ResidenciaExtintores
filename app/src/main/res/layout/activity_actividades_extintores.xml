@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_id_busqueda"
         android:layout_width="match_parent"
@@ -45,8 +45,7 @@
         android:text="BUSCAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_id_busqueda" />
-
+        app:layout_constraintTop_toBottomOf="@+id/til_id_busqueda"/>
     <ScrollView
         android:id="@+id/layout"
         android:layout_width="375dp"
@@ -58,7 +57,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_Buscar">
-
         <TableLayout
             android:id="@+id/lista_extintores"
             android:layout_width="375dp"
@@ -67,15 +65,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_Buscar">
-
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content"/>
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
+                android:layout_height="match_parent"/>
         </TableLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

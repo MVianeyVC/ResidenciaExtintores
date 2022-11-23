@@ -40,12 +40,14 @@ class RegistroUsuarios : AppCompatActivity() {
         }
         else
         {
-            val url = "http://192.168.1.13/extintorbd/insercionusuarios.php"
+            val url = "https://proyectogexapp.000webhostapp.com/extintorbd/insercionusuarios.php"
             val queue = Volley.newRequestQueue(this)
             var resultPOST = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
                     Toast.makeText(this, "Usuario registrado exitosamete.", Toast.LENGTH_LONG)
                         .show()
+                        var intent = Intent(this,Menu::class.java)
+                        startActivity(intent)
                 }, Response.ErrorListener { error ->
                     Toast.makeText(
                         this,
