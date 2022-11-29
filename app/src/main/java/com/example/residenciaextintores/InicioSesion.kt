@@ -34,7 +34,6 @@ class  InicioSesion : AppCompatActivity() {
                 + etUsuario!!.text.toString()) }
 
     }
-
     private fun ConsultaPass(URL: String) {
         Log.i("url", "" + URL)
         val queue = Volley.newRequestQueue(this)
@@ -71,6 +70,8 @@ class  InicioSesion : AppCompatActivity() {
         var intent = Intent(this,RegistroUsuarios::class.java)
         startActivity(intent)
     }
-
-
+    fun recuperarPass(view: View){
+        var intent = Intent(this,RecuperarPassword::class.java)
+        startActivity(intent)
+    }
 }
