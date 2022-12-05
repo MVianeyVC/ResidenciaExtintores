@@ -4,140 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformacionExtintor"
-    android:padding="20dp"
-    android:orientation="vertical">
+    tools:context=".InformacionUniversidad"
+    android:padding="20dp">
     <TextView
         android:id="@+id/tv_extinguisher_information_title"
+        style="@style/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        style="@style/Title"
-        android:text="Información de extintor"
+        android:text="Información universidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_id"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NÚMERO DE EXTINTOR"
         android:layout_marginTop="30dp"
-        style="@style/TextInputLayout"
+        android:hint="ID UNIVERSIDAD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/tv_extinguisher_information_title">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:focusable="false"
-            style="@style/TextInputLayout"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_folio"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_id"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="FOLIO"
-        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:focusable="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nombre"
         style="@style/TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="NOMBRE UNIVERSIDAD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_id">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_folio"
+            android:id="@+id/et_nombre"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            style="@style/TextInputLayout" />
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_capacidad"
+        android:id="@+id/til_direccion"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CAPACIDAD"
         android:layout_marginTop="15dp"
-        style="@style/TextInputLayout"
+        android:hint="DIRECCIÓN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_folio">
+        app:layout_constraintTop_toBottomOf="@+id/til_nombre">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_capacidad"
+            android:id="@+id/et_direccion"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            style="@style/TextInputLayout"/>
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_tipo"
+        android:id="@+id/til_municipio_estado"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="TIPO DE EXTINTOR"
         android:layout_marginTop="15dp"
-        style="@style/TextInputLayout"
+        android:hint="MUNICIPIO Y/O ESTADO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_capacidad">
+        app:layout_constraintTop_toBottomOf="@+id/til_direccion">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_tipo"
+            android:id="@+id/et_municipio_estado"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            style="@style/TextInputLayout"/>
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_ubicacion"
+        android:id="@+id/til_cp"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="UBICACIÓN"
         android:layout_marginTop="15dp"
-        style="@style/TextInputLayout"
+        android:hint="CODIGO POSTAL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_tipo">
+        app:layout_constraintTop_toBottomOf="@+id/til_municipio_estado">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_ubicacion"
+            android:id="@+id/et_cp"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            style="@style/TextInputLayout"/>
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_seguro"
+        android:id="@+id/til_unidad"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="SEGURO"
         android:layout_marginTop="15dp"
-        style="@style/TextInputLayout"
+        android:hint="NOMBRE UNIDAD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_ubicacion">
+        app:layout_constraintTop_toBottomOf="@+id/til_cp">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_seguro"
+            android:id="@+id/et_unidad"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            style="@style/TextInputLayout"/>
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_recargado"
+        android:id="@+id/til_departamento"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="RECARGADO"
         android:layout_marginTop="15dp"
-        style="@style/TextInputLayout"
+        android:hint="DEPARTAMENTO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_seguro">
+        app:layout_constraintTop_toBottomOf="@+id/til_unidad">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_recargado"
+            android:id="@+id/et_departamento"
+            style="@style/TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            style="@style/TextInputLayout"/>
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -153,18 +151,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Editar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.188" />
 
     <Button
         android:id="@+id/btn_Editar"
         style="@style/ButtonGreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="20dp"
         android:onClick="editar"
         android:text="EDITAR"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_recargado" />
+        app:layout_constraintTop_toBottomOf="@+id/til_departamento" />
 </androidx.constraintlayout.widget.ConstraintLayout>

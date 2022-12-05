@@ -137,7 +137,6 @@
             android:inputType="textPersonName"
             style="@style/TextInputLayout"/>
     </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/btn_Agregar"
         style="@style/ButtonGreen"

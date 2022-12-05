@@ -38,10 +38,7 @@ class RecuperarPassword : AppCompatActivity() {
 
         btnBuscar!!.setOnClickListener { ConsultaCorreo("https://proyectogexapp.000webhostapp.com/extintorbd/verificarCorreoRegistrado.php?correo="
                 + correoE!!.text.toString()) }
-
-
     }
-
     fun ConsultaCorreo(URL: String) {
         Log.i("url", "" + URL)
         val queue = Volley.newRequestQueue(this)
@@ -58,7 +55,6 @@ class RecuperarPassword : AppCompatActivity() {
                         var intent= Intent(this,CambiarPassword::class.java)
                         intent.putExtra("correo",et_id_busqueda.text.toString())
                         startActivity(intent)
-
                     } else {
                         Toast.makeText(
                             applicationContext,
@@ -73,7 +69,6 @@ class RecuperarPassword : AppCompatActivity() {
                         "El correo no existe en la base de datos",
                         Toast.LENGTH_LONG
                     ).show()
-
                 }
             }) { }
         queue.add(stringRequest)

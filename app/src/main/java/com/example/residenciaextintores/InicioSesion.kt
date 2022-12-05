@@ -16,12 +16,10 @@ import org.json.JSONException
 
 
 class  InicioSesion : AppCompatActivity() {
-
     var etUsuario: EditText? = null
     var etContra: EditText? = null
     var btnIngresar: Button? = null
     var ja: JSONArray? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +27,16 @@ class  InicioSesion : AppCompatActivity() {
         etUsuario = findViewById(R.id.et_username) as EditText
         etContra = findViewById(R.id.et_password) as EditText
         btnIngresar = findViewById(R.id.btn_logiin) as Button
-
         btnIngresar!!.setOnClickListener { ConsultaPass("https://proyectogexapp.000webhostapp.com/extintorbd/consultarusuario.php?usuario="
                 + etUsuario!!.text.toString()) }
-
     }
     private fun ConsultaPass(URL: String) {
         Log.i("url", "" + URL)
         val queue = Volley.newRequestQueue(this)
         val stringRequest = StringRequest(
             Request.Method.GET, URL,
-            { response ->
+            {
+                    response ->
                 try {
                     ja = JSONArray(response)
                     val contra = ja!!.getString(0)
@@ -68,6 +65,7 @@ class  InicioSesion : AppCompatActivity() {
     ///Funcion para pasar de Login a registro
     fun signUp(view: View){
         var intent = Intent(this,RegistroUsuarios::class.java)
+        finish()
         startActivity(intent)
     }
     fun recuperarPass(view: View){

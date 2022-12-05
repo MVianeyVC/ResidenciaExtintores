@@ -23,14 +23,10 @@ class CambiarPassword : AppCompatActivity() {
         confirmContrasena=findViewById(R.id.et_change_confirmPass)
 
         Correo = intent.getStringExtra("correo").toString()
-
-
     }
-
     fun guardar(view: View) {
         val value1: String = contrasena?.getText().toString().trim()
         val value2: String = confirmContrasena?.getText().toString().trim()
-
         if (value1.isEmpty() && value2.isEmpty()) {
             Toast.makeText(this, "Llene los campos", Toast.LENGTH_LONG).show()
             return
@@ -38,12 +34,12 @@ class CambiarPassword : AppCompatActivity() {
         else if (!value1.contentEquals(value2)) {
             Toast.makeText(this, "La contraseña no coincide", Toast.LENGTH_LONG).show()
             return
-        }else{
+        }else
+        {
             val url = "https://proyectogexapp.000webhostapp.com/extintorbd/editarContrasena.php"
             val queue = Volley.newRequestQueue(this)
             val resultado = object : StringRequest(
-                Request.Method.POST, url,
-                Response.Listener {
+                Request.Method.POST, url, Response.Listener {
                     Toast.makeText(this, "Contraseña guardada", Toast.LENGTH_LONG).show()
                     var intent = Intent(this,InicioSesion::class.java)
                     startActivity(intent)
@@ -57,12 +53,10 @@ class CambiarPassword : AppCompatActivity() {
                     val parametros = HashMap<String, String>()
                     parametros.put("correo", Correo!!)
                     parametros.put("contraseña", contrasena?.text.toString())
-
                     return parametros
                 }
             }
             queue.add(resultado)
         }
     }
-
 }

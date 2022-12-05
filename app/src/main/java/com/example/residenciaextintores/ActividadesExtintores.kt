@@ -18,7 +18,6 @@ import org.json.JSONException
 
 class ActividadesExtintores : AppCompatActivity() {
     var lista_extintores:TableLayout?=null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividades_extintores)
@@ -71,7 +70,8 @@ class ActividadesExtintores : AppCompatActivity() {
             Response.ErrorListener { error ->
                 Toast.makeText(this, "Error al borrar extintor. $error", Toast.LENGTH_LONG).show()
             }
-        ){
+        )
+        {
             override fun getParams(): MutableMap<String, String> {
                 val parametros=HashMap<String,String>()
                 parametros.put("IdExtintor",view.id.toString())
@@ -79,7 +79,6 @@ class ActividadesExtintores : AppCompatActivity() {
             }
         }
         queue.add(resultadoPost)
-        //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
     }
     fun buscarEdit(view:View){
         var et_id_busque:TextView=findViewById(R.id.IdExtintor)

@@ -12,10 +12,12 @@ class Splash : AppCompatActivity() {
     }
     fun inicio(view: View){
         var intent = Intent(this,InicioSesion::class.java)
+        finish()
         startActivity(intent)
     }
     fun registro(view: View){
-        var intent = Intent(this,RegistroUsuarios::class.java)
+        var intent = Intent(this,ActividadesProveedores::class.java)
+        finish()
         startActivity(intent)
     }
 }

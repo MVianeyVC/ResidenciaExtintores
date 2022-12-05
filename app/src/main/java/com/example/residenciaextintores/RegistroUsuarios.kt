@@ -26,16 +26,20 @@ class RegistroUsuarios : AppCompatActivity() {
         et_email = findViewById(R.id.et_email)
     }
     fun insert(view: View) {
-        if (et_fullname?.getText().toString().isEmpty()) {
+        if (et_fullname?.getText().toString().isEmpty())
+        {
             Toast.makeText(this, "Introduce nombre completo.", Toast.LENGTH_LONG).show()
         }
-        else if (et_email?.getText().toString().isEmpty()) {
+        else if (et_email?.getText().toString().isEmpty())
+        {
             Toast.makeText(this, "Introduce correo electrónico.", Toast.LENGTH_LONG).show()
         }
-        else if (et_username?.getText().toString().isEmpty()) {
+        else if (et_username?.getText().toString().isEmpty())
+        {
             Toast.makeText(this, "Introduce usuario.", Toast.LENGTH_LONG).show()
         }
-        else if (et_password?.getText().toString().isEmpty()) {
+        else if (et_password?.getText().toString().isEmpty())
+        {
             Toast.makeText(this, "Introduce contraseña.", Toast.LENGTH_LONG).show()
         }
         else
@@ -43,19 +47,19 @@ class RegistroUsuarios : AppCompatActivity() {
             val url = "https://proyectogexapp.000webhostapp.com/extintorbd/insercionusuarios.php"
             val queue = Volley.newRequestQueue(this)
             var resultPOST = object : StringRequest(Request.Method.POST, url,
-                Response.Listener<String> { response ->
-                    Toast.makeText(this, "Usuario registrado exitosamete.", Toast.LENGTH_LONG)
-                        .show()
-                        var intent = Intent(this,Menu::class.java)
+                Response.Listener<String>
+                {
+                        response ->
+                    Toast.makeText(this,"Usuario registrado exitosamete.", Toast.LENGTH_LONG).show()
+                    var intent = Intent(this,Menu::class.java)
                         startActivity(intent)
-                }, Response.ErrorListener { error ->
-                    Toast.makeText(
-                        this,
-                        "Error al registrar el usuario.$error",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
-                }) {
+                },
+                Response.ErrorListener
+                {
+                        error ->
+                    Toast.makeText(this,"Error al registrar el usuario.$error", Toast.LENGTH_LONG).show()
+                })
+            {
                 override fun getParams(): MutableMap<String, String>? {
                     val parametro = HashMap<String, String>()
                     parametro.put("usuario", et_username?.text.toString())
@@ -67,5 +71,11 @@ class RegistroUsuarios : AppCompatActivity() {
             }
             queue.add(resultPOST)
         }
+    }
+    fun dirigir_login(view: View)
+    {
+        var intent = Intent(this,InicioSesion::class.java)
+        finish()
+        startActivity(intent)
     }
 }

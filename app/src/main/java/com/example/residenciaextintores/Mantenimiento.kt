@@ -1,5 +1,6 @@
 package com.example.residenciaextintores
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -81,19 +82,17 @@ class Mantenimiento : AppCompatActivity() {
             var resultPOST = object : StringRequest(
                 Request.Method.POST, url,
                 Response.Listener<String> { response ->
-                    Toast.makeText(this, "Mantenimiento registrado exitosamete.", Toast.LENGTH_LONG)
-                        .show()
+                    Toast.makeText(this, "Mantenimiento registrado exitosamete.", Toast.LENGTH_LONG).show()
+                    var intent = Intent(this,ActividadesMantenimiento::class.java)
+                    startActivity(intent)
                 },
                 Response.ErrorListener { error ->
                     Toast.makeText(
                         this,
-                        "Error al registrar el mantenimiento.$error",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        "Error al registrar el mantenimiento.$error", Toast.LENGTH_LONG).show()
                 }) {
                 override fun getParams(): MutableMap<String, String>? {
                     val parametro = HashMap<String, String>()
-
                     parametro.put("fecha_activo", et_fechaI?.text.toString())
                     parametro.put("fecha_vecimiento", et_fechaF?.text.toString())
                     parametro.put("IdExtintor", et_id?.text.toString())
