@@ -119,6 +119,7 @@
             android:id="@+id/et_seguro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="2"
             android:inputType="textPersonName"
             style="@style/TextInputLayout"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -136,6 +137,7 @@
             android:id="@+id/et_recargado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="2"
             android:inputType="textPersonName"
             style="@style/TextInputLayout"/>
     </com.google.android.material.textfield.TextInputLayout>
