@@ -25,9 +25,10 @@ class ActividadesProveedores : AppCompatActivity() {
         lista_proveedores=findViewById(R.id.lista_proveedor)
         cargaLista()
     }
-    fun buscar(view: View){
-        var et_id_busqueda: EditText =findViewById(R.id.et_id_busqueda)
-        var intent= Intent(this,InformacionProveedor::class.java)
+    fun buscarprovedor(view: View){
+        startActivity(intent)
+        var et_id_busqueda:EditText=findViewById(R.id.et_id_busqueda)
+        var intent=Intent(this,InformacionProveedor::class.java)
         intent.putExtra("IdProveedor",et_id_busqueda.text.toString())
         finish()
         startActivity(intent)

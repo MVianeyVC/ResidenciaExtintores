@@ -85,7 +85,7 @@ class InformacionProveedor : AppCompatActivity() {
         }
         queue.add(resultado)
     }
-    fun editar(view: View) {
+    fun editarpro(view: View) {
         val url = "https://proyectogexapp.000webhostapp.com/extintorbd/editarproveedor.php"
         val queue = Volley.newRequestQueue(this)
         val resultado = object : StringRequest(
@@ -93,6 +93,7 @@ class InformacionProveedor : AppCompatActivity() {
             Response.Listener {
                 Toast.makeText(this, "Proveedor editado exitosamente.", Toast.LENGTH_LONG).show()
                 var intent = Intent(this,ActividadesProveedores::class.java)
+                finish()
                 startActivity(intent)
             },
             { error ->
