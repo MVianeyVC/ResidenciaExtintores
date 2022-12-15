@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MenuBonito"
+        android:padding="1dp">
+
+        <TextView
+            android:id="@+id/tv_started_title"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Bienvenido"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_started_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/montserrat"
+            android:padding="10dp"
+            android:lineHeight="25dp"
+            android:text="Selecciona del menú la actividad que vas a realizar."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_started_title" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/agrega_extintor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_started_sub_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="añadir_extintor"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+
+            <ImageView
+                android:id="@+id/img_Agrega"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="AÑADIR EXTINTOR"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/consultar_extintor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/agrega_extintor"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="consultar_extintor"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_search_24" />
+            <TextView
+                style="@style/Title"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="CONSULTAR EXTINTORES"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/agregar_mantenimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/consultar_extintor"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="añadir_mantenimiento"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+
+            <ImageView
+                android:id="@+id/img_mantenimiento"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="AÑADIR MANTENIMIENTO"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/consultar_mantenimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/agregar_mantenimiento"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="consultar_mantenimiento"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+            <ImageView
+                android:id="@+id/img_MAN"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_search_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="324dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="CONSULTAR MANTENIMIENTO"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/agregar_proveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/consultar_mantenimiento"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="añadir_proveedor"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+
+            <ImageView
+                android:id="@+id/img_proveedor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="AÑADIR PROVEEDOR"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/consultar_proveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/agregar_proveedor"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="consultar_proveedor"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+
+            <ImageView
+                android:id="@+id/img_proveedores"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_search_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="CONSULTAR PROVEEDORES"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/permisos_usuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/consultar_proveedor"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/primary_color"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:contentPadding="0dp"
+        android:onClick="editar_usuario">
+        <ImageView
+            android:id="@+id/img_usuarios"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_edit_note_24"/>
+        <TextView
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="EDITAR USUARIOS"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/informacion_Universida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/permisos_usuarios"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp"
+            android:onClick="reportes">
+            <ImageView
+                android:id="@+id/img_universida"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_fire_extinguisher_24"/>
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="REPORTES"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/informacion_Universidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/informacion_Universida"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="info_universidad"
+            app:cardBackgroundColor="@color/primary_color"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="0dp">
+
+            <ImageView
+                android:id="@+id/img_universidadd"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_info_24" />
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="289dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="INFORMACIÓN UNIDAD"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

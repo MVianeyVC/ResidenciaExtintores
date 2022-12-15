@@ -35,7 +35,7 @@ class InformacionExtintor : AppCompatActivity() {
 
         IdExtintor = intent.getStringExtra("IdExtintor").toString()
         val queue = Volley.newRequestQueue(this)
-        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registro.php?IdExtintor=$IdExtintor"
+        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registro.php?IdExtintor=${IdExtintor}"
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 et_id?.setText(response.getString("IdExtintor"))
@@ -47,7 +47,10 @@ class InformacionExtintor : AppCompatActivity() {
                 et_recargado?.setText(response.getString("recargado"))
             },
             { error ->
-                Toast.makeText(this, "No existen extintores. $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "No existe extintor con ese ID. $error", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ActividadesExtintores::class.java)
+                finish()
+                startActivity(intent)
             }
         )
         queue.add(jsonObjectRequest)
@@ -58,9 +61,15 @@ class InformacionExtintor : AppCompatActivity() {
         var resultado = object : StringRequest(Request.Method.POST, url,
             Response.Listener { response ->
                 Toast.makeText(this, "Extintor borrado exitosamente.", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ActividadesExtintores::class.java)
+                finish()
+                startActivity(intent)
             },
             { error ->
                 Toast.makeText(this, "Error al borrar extintor. $error", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ActividadesExtintores::class.java)
+                finish()
+                startActivity(intent)
             }
         )
         {
@@ -78,8 +87,9 @@ class InformacionExtintor : AppCompatActivity() {
         val resultado = object : StringRequest(Request.Method.POST, url,
             Response.Listener {
                 Toast.makeText(this, "Extintor editado exitosamente.", Toast.LENGTH_LONG).show()
-                    var intent = Intent(this,ActividadesExtintores::class.java)
-                    startActivity(intent)
+                var intent = Intent(this,ActividadesExtintores::class.java)
+                finish()
+                startActivity(intent)
             },
             { error ->
                 Toast.makeText(this, "Error al editar extintor. $error", Toast.LENGTH_LONG).show()

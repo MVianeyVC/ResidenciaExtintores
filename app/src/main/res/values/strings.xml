@@ -5,4 +5,16 @@
     <string name="olvide_mi_password">Olvide mi contraseña</string>
     <string name="iniciar_sesion">Iniciar sesión</string>
     <string name="no_tengo_cuenta">No tengo cuenta</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string-array name="Languages">
+        <item>Basico</item>
+        <item>Admin</item>
+    </string-array>
+
+    <string name="selected_item2">Selected item:</string>
+    <string-array name="Languages2">
+        <item>Lector</item>
+        <item>CRUD</item>
+    </string-array>
 </resources>

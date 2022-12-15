@@ -16,7 +16,7 @@ class Splash : AppCompatActivity() {
         startActivity(intent)
     }
     fun registro(view: View){
-        var intent = Intent(this,ActividadesProveedores::class.java)
+        var intent = Intent(this,RegistroUsuarios::class.java)
         finish()
         startActivity(intent)
     }

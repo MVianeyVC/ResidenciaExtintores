@@ -18,6 +18,7 @@ import org.json.JSONException
 
 class ActividadesMantenimiento : AppCompatActivity() {
     var lista_mantenimiento: TableLayout?=null
+    var IdMantenimiento:String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class ActividadesMantenimiento : AppCompatActivity() {
         var et_id_busqueda: EditText =findViewById(R.id.et_id_busqueda)
         var intent= Intent(this,InformacionMantenimiento::class.java)
         intent.putExtra("IdMantenimiento",et_id_busqueda.text.toString())
+        finish()
         startActivity(intent)
     }
     fun cargaLista(){
@@ -86,9 +88,10 @@ class ActividadesMantenimiento : AppCompatActivity() {
         //Toast.makeText(this,view.id.toString(),Toast.LENGTH_LONG).show()
     }
     fun buscarEdit(view: View){
+        IdMantenimiento=view.id.toString()
         var et_id_busque: TextView =findViewById(R.id.IdMantenimiento)
         var intent= Intent(this,InformacionMantenimiento::class.java)
-        intent.putExtra("IdMantenimiento",et_id_busque.text.toString())
+        intent.putExtra("IdMantenimiento",IdMantenimiento.toString())
         finish()
         startActivity(intent)
     }

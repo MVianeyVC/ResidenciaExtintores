@@ -84,6 +84,7 @@ class Mantenimiento : AppCompatActivity() {
                 Response.Listener<String> { response ->
                     Toast.makeText(this, "Mantenimiento registrado exitosamete.", Toast.LENGTH_LONG).show()
                     var intent = Intent(this,ActividadesMantenimiento::class.java)
+                    finish()
                     startActivity(intent)
                 },
                 Response.ErrorListener { error ->

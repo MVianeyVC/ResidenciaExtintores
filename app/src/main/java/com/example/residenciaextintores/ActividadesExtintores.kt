@@ -18,17 +18,12 @@ import org.json.JSONException
 
 class ActividadesExtintores : AppCompatActivity() {
     var lista_extintores:TableLayout?=null
+    var IdExtintor:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividades_extintores)
         lista_extintores=findViewById(R.id.lista_extintores)
         cargaLista()
-    }
-    fun buscar(view:View){
-        var et_id_busqueda:EditText=findViewById(R.id.et_id_busqueda)
-        var intent=Intent(this,InformacionExtintor::class.java)
-        intent.putExtra("IdExtintor",et_id_busqueda.text.toString())
-        startActivity(intent)
     }
     fun cargaLista(){
         lista_extintores?.removeAllViews()
@@ -80,10 +75,19 @@ class ActividadesExtintores : AppCompatActivity() {
         }
         queue.add(resultadoPost)
     }
+    fun buscar(view:View){
+        var et_id_busqueda:EditText=findViewById(R.id.et_id_busqueda)
+        var intent=Intent(this,InformacionExtintor::class.java)
+        intent.putExtra("IdExtintor",et_id_busqueda.toString())
+        finish()
+        startActivity(intent)
+    }
     fun buscarEdit(view:View){
+        IdExtintor=view.id.toString()
         var et_id_busque:TextView=findViewById(R.id.IdExtintor)
         var intent=Intent(this,InformacionExtintor::class.java)
-        intent.putExtra("IdExtintor",et_id_busque.text.toString())
+        intent.putExtra("IdExtintor",IdExtintor.toString())
+        finish()
         startActivity(intent)
     }
 }

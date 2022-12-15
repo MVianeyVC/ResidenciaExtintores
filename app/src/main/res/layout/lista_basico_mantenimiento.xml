@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+    <TextView
+        android:id="@+id/IdMantenimiento"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="TextView"/>
+    <TextView
+        android:id="@+id/fecha_activo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="TextView"/>
+    <TextView
+        android:id="@+id/fecha_vecimiento"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="TextView"/>
+    <TextView
+        android:id="@+id/IdExtintor"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="TextView"/>
+    <ImageButton
+        android:id="@+id/btn_Informacion"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:backgroundTint="#AED581"
+        android:onClick="buscarEdit"
+        app:srcCompat="@drawable/ic_baseline_info_24"/>
+</TableRow>

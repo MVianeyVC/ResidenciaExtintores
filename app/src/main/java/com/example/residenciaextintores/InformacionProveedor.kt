@@ -54,6 +54,9 @@ class InformacionProveedor : AppCompatActivity() {
             },
             { error ->
                 Toast.makeText(this, "No existe proveedor. $error", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ActividadesProveedores::class.java)
+                finish()
+                startActivity(intent)
             }
         )
         queue.add(jsonObjectRequest)

@@ -28,6 +28,7 @@ class ActividadesUniversidad : AppCompatActivity() {
         var et_id_busqueda: EditText =findViewById(R.id.et_id_busqueda)
         var intent= Intent(this,InformacionUniversidad::class.java)
         intent.putExtra("IdUniversidad",et_id_busqueda.text.toString())
+        finish()
         startActivity(intent)
     }
     fun cargaLista(){
@@ -86,6 +87,7 @@ class ActividadesUniversidad : AppCompatActivity() {
         var et_id_busque: TextView =findViewById(R.id.IdUniversidad)
         var intent= Intent(this,InformacionUniversidad::class.java)
         intent.putExtra("IdUniversidad",et_id_busque.text.toString())
+        finish()
         startActivity(intent)
     }
 }

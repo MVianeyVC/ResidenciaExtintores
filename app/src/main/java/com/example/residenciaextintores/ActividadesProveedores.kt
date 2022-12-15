@@ -18,6 +18,7 @@ import org.json.JSONException
 
 class ActividadesProveedores : AppCompatActivity() {
     var lista_proveedores: TableLayout?=null
+    var IdProveedor:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividades_proveedores)
@@ -28,6 +29,7 @@ class ActividadesProveedores : AppCompatActivity() {
         var et_id_busqueda: EditText =findViewById(R.id.et_id_busqueda)
         var intent= Intent(this,InformacionProveedor::class.java)
         intent.putExtra("IdProveedor",et_id_busqueda.text.toString())
+        finish()
         startActivity(intent)
     }
     fun cargaLista(){
@@ -83,9 +85,11 @@ class ActividadesProveedores : AppCompatActivity() {
         queue.add(resultadoPost)
     }
     fun buscarEdit(view: View){
+        IdProveedor=view.id.toString()
         var et_id_busque: TextView =findViewById(R.id.IdProveedor)
         var intent= Intent(this,InformacionProveedor::class.java)
-        intent.putExtra("IdProveedor",et_id_busque.text.toString())
+        intent.putExtra("IdProveedor",IdProveedor.toString())
+        finish()
         startActivity(intent)
     }
 }

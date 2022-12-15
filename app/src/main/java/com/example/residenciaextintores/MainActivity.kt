@@ -59,6 +59,9 @@ class MainActivity : AppCompatActivity() {
             var resultPOST = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
                     Toast.makeText(this, "Extintor añadido exitosamete.", Toast.LENGTH_LONG).show()
+                    var intent = Intent(this,ActividadesExtintores::class.java)
+                    finish()
+                    startActivity(intent)
                 },
                 Response.ErrorListener { error ->
                     Toast.makeText(this, "Error al añadir el extintor.$error", Toast.LENGTH_LONG).show()

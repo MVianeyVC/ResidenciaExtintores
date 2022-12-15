@@ -33,9 +33,13 @@ class InformacionUniversidad : AppCompatActivity() {
         et_departamento=findViewById(R.id.et_departamento)
         et_id=findViewById(R.id.et_id)
 
-        IdUniversidad = intent.getStringExtra("IdUniversidad").toString()
+       // IdUniversidad = intent.getStringExtra("IdUniversidad").toString()
+
         val queue = Volley.newRequestQueue(this)
-        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registrouniversidad.php?IdUniversidad=$IdUniversidad"
+
+        //val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registrouniversidad.php?IdUniversidad=$IdUniversidad"
+        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registrouniversidad.php?"
+
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             { response ->
@@ -53,6 +57,7 @@ class InformacionUniversidad : AppCompatActivity() {
         )
         queue.add(jsonObjectRequest)
     }
+    /*
     fun borrar(view: View) {
         val url = "https://proyectogexapp.000webhostapp.com/extintorbd/borraruniversidad.php"
         val queue = Volley.newRequestQueue(this)
@@ -73,7 +78,7 @@ class InformacionUniversidad : AppCompatActivity() {
             }
         }
         queue.add(resultado)
-    }
+    }*/
     fun editar(view: View) {
         val url = "https://proyectogexapp.000webhostapp.com/extintorbd/editaruniversidad.php"
         val queue = Volley.newRequestQueue(this)
@@ -81,7 +86,7 @@ class InformacionUniversidad : AppCompatActivity() {
             Request.Method.POST, url,
             Response.Listener {
                 Toast.makeText(this, "Universidad editado exitosamente.", Toast.LENGTH_LONG).show()
-                var intent = Intent(this,ActividadesUniversidad::class.java)
+                var intent = Intent(this,MenuBonito::class.java)
                 startActivity(intent)
             },
             { error ->
@@ -91,7 +96,7 @@ class InformacionUniversidad : AppCompatActivity() {
         {
             override fun getParams(): MutableMap<String, String> {
                 val parametros = HashMap<String, String>()
-                parametros.put("IdUniversidad", IdUniversidad!!)
+                parametros.put("IdUniversidad", et_id?.text.toString())
                 parametros.put("nombre", et_nombre?.text.toString())
                 parametros.put("direccion", et_direccion?.text.toString())
                 parametros.put("municipio_estado", et_municipio_estado?.text.toString())

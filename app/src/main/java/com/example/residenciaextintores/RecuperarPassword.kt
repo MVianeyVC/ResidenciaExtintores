@@ -54,6 +54,7 @@ class RecuperarPassword : AppCompatActivity() {
                         Toast.makeText(applicationContext, "Correo Verficado", Toast.LENGTH_SHORT).show()
                         var intent= Intent(this,CambiarPassword::class.java)
                         intent.putExtra("correo",et_id_busqueda.text.toString())
+                        finish()
                         startActivity(intent)
                     } else {
                         Toast.makeText(

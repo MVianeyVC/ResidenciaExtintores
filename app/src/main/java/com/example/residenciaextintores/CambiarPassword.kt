@@ -42,6 +42,7 @@ class CambiarPassword : AppCompatActivity() {
                 Request.Method.POST, url, Response.Listener {
                     Toast.makeText(this, "Contraseña guardada", Toast.LENGTH_LONG).show()
                     var intent = Intent(this,InicioSesion::class.java)
+                    finish()
                     startActivity(intent)
                 },
                 { error ->
