@@ -15,7 +15,7 @@ class MenuBasico : AppCompatActivity() {
         startActivity(intent)
     }
     fun consultar_extintores(view: View){
-        var intent = Intent(this,LecturaMantenimiento::class.java)
+        var intent = Intent(this,LecturaExtintores::class.java)
         startActivity(intent)
     }
     fun consultar_unidad(view: View){

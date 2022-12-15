@@ -41,7 +41,9 @@ class InformacionLecturaMantenimiento : AppCompatActivity() {
             {
                     error ->
                 Toast.makeText(this, "No existen mantenimietos. $error", Toast.LENGTH_LONG).show()
-
+                var intent = Intent(this,LecturaMantenimiento::class.java)
+                finish()
+                startActivity(intent)
             })
         queue.add(jsonObjectRequest)
     }

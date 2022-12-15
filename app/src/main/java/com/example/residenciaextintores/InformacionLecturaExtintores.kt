@@ -45,7 +45,10 @@ class InformacionLecturaExtintores : AppCompatActivity() {
                 et_recargado?.setText(response.getString("recargado"))
             },
             { error ->
-                Toast.makeText(this, "No existen extintores. $error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "No existe extintor con ese ID. $error", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,LecturaExtintores::class.java)
+                finish()
+                startActivity(intent)
             })
         queue.add(jsonObjectRequest)
     }
