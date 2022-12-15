@@ -35,7 +35,7 @@ class InformacionExtintor : AppCompatActivity() {
 
         IdExtintor = intent.getStringExtra("IdExtintor").toString()
         val queue = Volley.newRequestQueue(this)
-        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registro.php?IdExtintor=${IdExtintor}"
+        val url = "https://proyectogexapp.000webhostapp.com/extintorbd/registro.php?IdExtintor=$IdExtintor"
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 et_id?.setText(response.getString("IdExtintor"))
@@ -55,7 +55,7 @@ class InformacionExtintor : AppCompatActivity() {
         )
         queue.add(jsonObjectRequest)
     }
-    fun borrar(view: View) {
+    fun borrarex(view: View) {
         val url = "https://proyectogexapp.000webhostapp.com/extintorbd/borrar.php"
         val queue = Volley.newRequestQueue(this)
         var resultado = object : StringRequest(Request.Method.POST, url,

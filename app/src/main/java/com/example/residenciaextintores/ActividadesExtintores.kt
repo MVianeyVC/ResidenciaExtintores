@@ -75,10 +75,10 @@ class ActividadesExtintores : AppCompatActivity() {
         }
         queue.add(resultadoPost)
     }
-    fun buscar(view:View){
+    fun buscarex(view:View){
         var et_id_busqueda:EditText=findViewById(R.id.et_id_busqueda)
         var intent=Intent(this,InformacionExtintor::class.java)
-        intent.putExtra("IdExtintor",et_id_busqueda.toString())
+        intent.putExtra("IdExtintor",et_id_busqueda.text.toString())
         finish()
         startActivity(intent)
     }

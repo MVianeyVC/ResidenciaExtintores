@@ -68,6 +68,9 @@ class InformacionProveedor : AppCompatActivity() {
             Request.Method.POST, url,
             Response.Listener { response ->
                 Toast.makeText(this, "Proveedor borrado exitosamente.", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ActividadesProveedores::class.java)
+                finish()
+                startActivity(intent)
             },
             { error ->
                 Toast.makeText(this, "Error al borrar proveedor. $error", Toast.LENGTH_LONG).show()

@@ -65,7 +65,7 @@ class ProveedorExtintores : AppCompatActivity() {
                 Request.Method.POST, url,
                 Response.Listener<String> { response ->
                     Toast.makeText(this, "Proveedor registrado exitosamete.", Toast.LENGTH_LONG).show()
-                    var intent = Intent(this,Menu::class.java)
+                    var intent = Intent(this,ActividadesProveedores::class.java)
                     finish()
                     startActivity(intent)
                 },
